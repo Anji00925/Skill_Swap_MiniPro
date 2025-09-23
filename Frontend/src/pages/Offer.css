@@ -1,0 +1,177 @@
+/* .offer-page {
+  max-width: 1100px;
+  margin: auto;
+  
+}
+
+.offer-card {
+  background: #ffffff;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.offer-label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.offer-input {
+  background-color: #f9fbfc;
+  border: 2px solid #dbe6f2;
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.3s ease;
+}
+
+.offer-input:focus {
+  border-color: #1ee269;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+  outline: none;
+}
+
+.preview-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-description {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.preview-tags .badge {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+             */
+
+             /* Offer page overlay with soft blur */
+.offer-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(245,245,245,0.3));
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3D glass card */
+.offer-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.1) inset;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  color: #1a1a1a;
+  animation: fadeIn 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Heading */
+.offer-card h3 {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Success message */
+.offer-card .alert-success {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Labels */
+.offer-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  color: #1a1a1a;
+}
+
+/* Inputs and textarea with 3D glass effect */
+.offer-input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 200, 200, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  color: #1a1a1a;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08) inset;
+  transition: all 0.3s ease;
+}
+
+.offer-input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  background: rgba(255,255,255,0.45);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1) inset, 0 0 8px rgba(13,110,253,0.2);
+}
+
+/* Placeholder */
+.offer-input::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+
+/* Submit button with glass 3D effect */
+.offer-card .btn-primary {
+  width: 100%;
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.65rem 0;
+  background: rgba(13, 110, 253, 0.4);
+  border: 1px solid rgba(13, 110, 253, 0.5);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.offer-card .btn-primary:hover {
+  background: rgba(13, 110, 253, 0.7);
+  border-color: rgba(13, 110, 253, 0.8);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Form spacing */
+.offer-form .form-group {
+  margin-bottom: 1rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,67 @@
+.auth-wrapper {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to right, #edf4ff, #dbeafe);
+}
+
+.auth-left,
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-left {
+  background-color: white;
+  padding: 3rem;
+  flex-direction: column;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-right {
+  background: linear-gradient(145deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 20px 0 0 20px;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-input {
+  border-radius: 50px;
+  padding: 12px 20px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.pill-btn {
+  border-radius: 50px;
+  padding: 10px 30px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.pill-btn:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+  .auth-right, .auth-left {
+    border-radius: 0;
+    width: 100%;
+  }
+}

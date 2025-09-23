@@ -1,0 +1,36 @@
+.skillboard-container {
+  max-width: 1200px;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.small-tag {
+  background-color: #e7f1ff;
+  color: #0056b3;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+}
+
+.connect-btn {
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  background-color: #198754;
+  color: white;
+  border-color: #198754;
+}

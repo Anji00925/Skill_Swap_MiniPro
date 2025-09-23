@@ -1,0 +1,39 @@
+.seek-page {
+  max-width: 1200px;
+}
+
+.category-btn {
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 6px 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background-color: #198754;
+  color: white;
+  border-color: #198754;
+}
+
+.skill-card {
+  border-radius: 16px;
+  background-color: #fff;
+  transition: 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.01);
+}
+
+.connect-btn {
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  background-color: #198754;
+  color: white;
+  border-color: #198754;
+}

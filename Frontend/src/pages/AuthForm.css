@@ -1,0 +1,67 @@
+/* Overall layout */
+.signup-wrapper {
+    background-color: #f8f9fa;
+    height: 100vh;
+  }
+  
+  /* Left (Form) panel */
+  .left-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+  }
+  
+  /* Auth Form styling */
+  .auth-form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    color: white;
+    min-width: 300px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Right (Image/Gradient) panel */
+  /* Right (Image/Gradient) panel with animation */
+.right-panel {
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: slideFadeIn 1.2s ease-out forwards;
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  
+  /* Slide + fade animation */
+  @keyframes slideFadeIn {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .image-overlay-text {
+    text-align: center;
+    padding: 2rem;
+    animation: fadeInText 1.5s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

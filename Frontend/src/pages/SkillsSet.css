@@ -1,0 +1,90 @@
+.skills-container {
+  text-align: center;
+  padding: 40px;
+  background: #f4f7fa;
+  min-height: 100vh;
+}
+
+.skills-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: bold;
+}
+
+.no-skills {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.skill-card {
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Tags */
+.tags {
+  margin-bottom: 10px;
+}
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin: 3px;
+}
+
+/* Author */
+.author {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Colorful cards */
+.card-1 {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+}
+.card-2 {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+.card-3 {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #222;
+}
+.card-4 {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+.card-5 {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.card-6 {
+  background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+}
