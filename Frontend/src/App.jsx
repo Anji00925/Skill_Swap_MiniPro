@@ -47,6 +47,9 @@ import SignUp from "./pages/SignUp";
 import Connections from "./pages/Connections";
 import MyJourney from "./pages/MyJourney";
 import SkillsSet from "./pages/Skillsset";
+import ChatBox from "./components/ChatBox";
+import UserList from "./components/UserList";
+import { getUsers } from "./api/users";
 
 function App() {
   return (
@@ -64,6 +67,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/connections" element={<Connections />} />
           <Route path="/my-journey" element={<MyJourney />} />
+          <Route path="/chat" element={<ChatBox />} />
         </Routes>
       </div>
     </AuthProvider>

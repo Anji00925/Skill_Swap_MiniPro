@@ -6,6 +6,7 @@ import connectDB from './config/db.js';
 import skillRoutes from './routes/skillRoutes.js';
 import userRoutes from "./routes/userRoutes.js";
 import connectionRoutes from './routes/connectionRoutes.js';
+import chatRoutes from "./routes/chatRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(cors({
 app.use('/api/users', userRoutes);
 app.use('/api/skills', skillRoutes);
 app.use('/api/connections', connectionRoutes);
+app.use("/api/chat", chatRoutes);
 
 // health
 app.get('/', (req, res) => res.send('SkillSwap API is running'));
