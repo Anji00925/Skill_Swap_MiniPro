@@ -220,3 +220,139 @@
 .connections-page li .remove:hover {
   background-color: #5a6268;
 }
+
+.connections-page {
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.connections-page h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.connections-page .send-request {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.connections-page .send-request input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.connections-page .send-request input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.connections-page .send-request button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.connections-page .send-request button:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
+
+.connections-page ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.connections-page li {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connections-page li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.connections-page li span {
+  font-weight: 500;
+}
+
+.connections-page li button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.connections-page li button:hover {
+  transform: scale(1.05);
+}
+
+.connections-page li .accept {
+  background-color: #28a745;
+  color: white;
+}
+
+.connections-page li .accept:hover {
+  background-color: #218838;
+}
+
+.connections-page li .decline {
+  background-color: #dc3545;
+  color: white;
+}
+
+.connections-page li .decline:hover {
+  background-color: #c82333;
+}
+
+.connections-page li .remove {
+  background-color: #6c757d;
+  color: white;
+}
+
+.connections-page li .remove:hover {
+  background-color: #5a6268;
+}
+
+/* ✅ New: Message Button (💬) */
+.connections-page li .message {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.connections-page li .message:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

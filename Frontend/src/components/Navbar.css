@@ -26,3 +26,20 @@
   padding: 6px 16px;
   font-weight: 500;
 }
+
+
+.custom-navbar .btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logout-btn {
+  background-color: #ff6b81;
+  border: none;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #ff4757;
+}

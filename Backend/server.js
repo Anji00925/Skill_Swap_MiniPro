@@ -35,84 +35,84 @@
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////##############################
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import { createServer } from 'http';
-import { Server } from 'socket.io';
-import connectDB from './config/db.js';
-import skillRoutes from './routes/skillRoutes.js';
-import userRoutes from "./routes/userRoutes.js";
-import connectionRoutes from './routes/connectionRoutes.js';
-import chatRoutes from "./routes/chatRoutes.js";
+/////////////////////////////////////Working Code Any errors Uncomment this/////////////////////////////////////////////////////////////////////////##############################
+// import express from 'express';
+// import dotenv from 'dotenv';
+// import cors from 'cors';
+// import { createServer } from 'http';
+// import { Server } from 'socket.io';
+// import connectDB from './config/db.js';
+// import skillRoutes from './routes/skillRoutes.js';
+// import userRoutes from "./routes/userRoutes.js";
+// import connectionRoutes from './routes/connectionRoutes.js';
+// import chatRoutes from "./routes/chatRoutes.js";
 
-dotenv.config();
+// dotenv.config();
 
-const app = express();
+// const app = express();
 
-// Create HTTP server for Socket.io
-const server = createServer(app);
+// // Create HTTP server for Socket.io
+// const server = createServer(app);
 
-// Initialize Socket.io with CORS
-const io = new Server(server, {
-  cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-    methods: ['GET', 'POST'],
-    credentials: true,
-  },
-});
+// // Initialize Socket.io with CORS
+// const io = new Server(server, {
+//   cors: {
+//     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+//     methods: ['GET', 'POST'],
+//     credentials: true,
+//   },
+// });
 
-// Connect MongoDB
-connectDB();
+// // Connect MongoDB
+// connectDB();
 
-// Middleware
-app.use(express.json());
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  credentials: true,
-}));
-app.use("/uploads", express.static("uploads"));
+// // Middleware
+// app.use(express.json());
+// app.use(cors({
+//   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+//   credentials: true,
+// }));
+// app.use("/uploads", express.static("uploads"));
 
 
-// API Routes
-app.use('/api/users', userRoutes);
-app.use('/api/skills', skillRoutes);
-app.use('/api/connections', connectionRoutes);
-app.use("/api/chat", chatRoutes);
+// // API Routes
+// app.use('/api/users', userRoutes);
+// app.use('/api/skills', skillRoutes);
+// app.use('/api/connections', connectionRoutes);
+// app.use("/api/chat", chatRoutes);
 
-// Health Check
-app.get('/', (req, res) => res.send('SkillSwap API is running successfully 🚀'));
+// // Health Check
+// app.get('/', (req, res) => res.send('SkillSwap API is running successfully 🚀'));
 
-// ✅ Socket.io Events
-io.on('connection', (socket) => {
-  console.log(`🟢 New client connected: ${socket.id}`);
+// // ✅ Socket.io Events
+// io.on('connection', (socket) => {
+//   console.log(`🟢 New client connected: ${socket.id}`);
 
-  // User joins a room (based on userId)
-  socket.on('joinChat', (userId) => {
-    socket.join(userId);
-    console.log(`👤 User ${userId} joined their room`);
-  });
+//   // User joins a room (based on userId)
+//   socket.on('joinChat', (userId) => {
+//     socket.join(userId);
+//     console.log(`👤 User ${userId} joined their room`);
+//   });
 
-  // Listen for sendMessage and deliver in real-time
-  socket.on('sendMessage', ({ senderId, receiverId, content }) => {
-    if (!senderId || !receiverId || !content) return;
+//   // Listen for sendMessage and deliver in real-time
+//   socket.on('sendMessage', ({ senderId, receiverId, content }) => {
+//     if (!senderId || !receiverId || !content) return;
 
-    console.log(`📩 ${senderId} → ${receiverId}: ${content}`);
-    io.to(receiverId).emit('receiveMessage', { senderId, content });
-  });
+//     console.log(`📩 ${senderId} → ${receiverId}: ${content}`);
+//     io.to(receiverId).emit('receiveMessage', { senderId, content });
+//   });
 
-  // Handle disconnection
-  socket.on('disconnect', () => {
-    console.log(`🔴 Client disconnected: ${socket.id}`);
-  });
-});
+//   // Handle disconnection
+//   socket.on('disconnect', () => {
+//     console.log(`🔴 Client disconnected: ${socket.id}`);
+//   });
+// });
 
-// ✅ Make io accessible across app (optional)
-app.set('io', io);
+// // ✅ Make io accessible across app (optional)
+// app.set('io', io);
 
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+// const PORT = process.env.PORT || 5000;
+// server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
 
 // ###########################################################################################################
@@ -201,3 +201,85 @@ server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 // // 🚀 Start Server
 // const PORT = process.env.PORT || 5000;
 // server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
+
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+import path from 'path';
+import connectDB from './config/db.js';
+import skillRoutes from './routes/skillRoutes.js';
+import userRoutes from "./routes/userRoutes.js";
+import connectionRoutes from './routes/connectionRoutes.js';
+import chatRoutes from "./routes/chatRoutes.js";
+
+dotenv.config();
+
+const app = express();
+const server = createServer(app);
+
+// === Initialize Socket.io ===
+const io = new Server(server, {
+  cors: {
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
+});
+
+// === Connect MongoDB ===
+connectDB();
+
+// === Middleware ===
+app.use(express.json());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true,
+}));
+
+// ✅ Make "uploads" folder public (for documents & images)
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// === API Routes ===
+app.use('/api/users', userRoutes);
+app.use('/api/skills', skillRoutes);
+app.use('/api/connections', connectionRoutes);
+app.use("/api/chat", chatRoutes);
+
+// === Health Check Route ===
+app.get('/', (req, res) => res.send('🚀 SkillSwap API is running successfully!'));
+
+// === Socket.io Real-time Chat ===
+io.on('connection', (socket) => {
+  console.log(`🟢 New user connected: ${socket.id}`);
+
+  // User joins their own private room
+  socket.on('joinChat', (userId) => {
+    socket.join(userId);
+    console.log(`👤 User ${userId} joined room`);
+  });
+
+  // Handle real-time message sending
+  socket.on('sendMessage', ({ senderId, receiverId, content, type }) => {
+    if (!senderId || !receiverId) return;
+
+    console.log(`📩 Message from ${senderId} to ${receiverId}`);
+
+    // Send message to receiver’s room
+    io.to(receiverId).emit('receiveMessage', { senderId, content, type });
+  });
+
+  socket.on('disconnect', () => {
+    console.log(`🔴 User disconnected: ${socket.id}`);
+  });
+});
+
+// === Expose Socket.io globally if needed ===
+app.set('io', io);
+
+// === Start the Server ===
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));

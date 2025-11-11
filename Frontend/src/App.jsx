@@ -48,7 +48,8 @@ import Connections from "./pages/Connections";
 import MyJourney from "./pages/MyJourney";
 import SkillsSet from "./pages/Skillsset";
 import ChatBox from "./components/ChatBox";
-// import ChatPage from "./pages/ChatPage";
+import ChatPage from "./pages/ChatPage";
+import ChatsListPage from "./pages/ChatsListPage";
 import UserList from "./components/UserList";
 import { getUsers } from "./api/users";
 
@@ -70,6 +71,9 @@ function App() {
           <Route path="/my-journey" element={<MyJourney />} />
           <Route path="/chat" element={<ChatBox />} />
           {/* <Route path="/chatt" element={<ChatPage />} /> */}
+
+          <Route path="/chats" element={<ChatsListPage />} />
+          <Route path="/chat/:id" element={<ChatPage />} />
 
         </Routes>
       </div>
