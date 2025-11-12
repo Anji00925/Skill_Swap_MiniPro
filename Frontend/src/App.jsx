@@ -46,7 +46,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Connections from "./pages/Connections";
 import MyJourney from "./pages/MyJourney";
-import SkillsSet from "./pages/Skillsset";
+import SkillsSet from "./pages/SkillsSet";
 import ChatBox from "./components/ChatBox";
 import ChatPage from "./pages/ChatPage";
 import ChatsListPage from "./pages/ChatsListPage";
